@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  background-color: rgb(237, 224, 224)!important;
+}
+
+.linear{
+  background: linear-gradient(to right, #4bddf7, rgb(27, 63, 126))!important;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: white!important;
+}
+.formheader{
+  color: #22c3df;
+}
+.fromback{
+  background-color: rgb(255, 255, 255);
+}
