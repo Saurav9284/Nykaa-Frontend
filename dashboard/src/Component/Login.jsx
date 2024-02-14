@@ -30,6 +30,10 @@ const Login = () => {
 
   const handleShowClick = () => setShowPassword(!showPassword);
 
+  const handlesignup = () => {
+    navigate('/register')
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -161,7 +165,7 @@ const Login = () => {
       </Stack>
       <Box>
         New to us?{" "}
-        <Link color="teal.500" onClick={()=>{navigate('/register')}}>
+        <Link color="teal.500" onClick={handlesignup}>
           Sign Up
         </Link>
       </Box>
