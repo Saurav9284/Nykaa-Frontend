@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useToast } from "@chakra-ui/react";
 import {
   Flex,
   Heading,
@@ -22,9 +23,66 @@ const CFaLock = chakra(FaLock);
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const toast = useToast();
 
   const handleShowClick = () => setShowPassword(!showPassword);
-  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const payload = JSON.stringify({ email, password });
+
+    fetch("https://nykamock-backend-production.up.railway.app/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: payload,
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
+      .then((res) => {
+        if (res.msg === "login successful") {
+          const token = res.userData.token;
+          const name = res.userData.name;
+          sessionStorage.setItem("Token", token);
+          sessionStorage.setItem("Name", name);
+          toast({
+            position: "top",
+            title: res.msg,
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+          });
+          navigate("/");
+        } else {
+          toast({
+            position: "top",
+            title: res.msg || "Login failed",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+          });
+        }
+      })
+      .catch((err) => {
+        console.error("Error during login:", err);
+        toast({
+          position: "top",
+          title: "An error occurred during login",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      });
+  };
 
   return (
     <div className="fromback">
@@ -43,7 +101,7 @@ const Login = () => {
       >
         <Heading className="formheader">Login to your account</Heading>
         <Box minW={{ base: "90%", md: "468px" }}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <Stack
               spacing={4}
               p="1rem"
@@ -57,7 +115,11 @@ const Login = () => {
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input type="email" placeholder="email address" />
+                  <Input 
+                  type="email" 
+                  placeholder="email address"
+                  value={email}
+                  onChange={(e)=>{setEmail(e.target.value)}} />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -70,6 +132,8 @@ const Login = () => {
                   <Input
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
+                    value={password}
+                    onChange={(e)=>{setPassword(e.target.value)}}
                   />
                   <InputRightElement width="4.5rem">
                     <Button h="1.75rem" size="sm" onClick={handleShowClick}>
