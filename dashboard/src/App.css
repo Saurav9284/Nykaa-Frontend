@@ -15,3 +15,12 @@
 .fromback{
   background-color: rgb(255, 255, 255);
 }
+.logoDiv > h1 > span {
+  background: linear-gradient(to right, #4b93f7, #1d1b7e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.logoDiv > h1  {
+  color: rgb(77, 181, 188);
+}

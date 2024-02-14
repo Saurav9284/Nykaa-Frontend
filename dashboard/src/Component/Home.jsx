@@ -71,7 +71,7 @@ const Home = () => {
       }
 
       if (selectedCategorygender) {
-        apiUrl += `&category=${selectedCategorygender}`;
+        apiUrl += `&gender=${selectedCategorygender}`;
       }
 
       //search
@@ -564,7 +564,7 @@ const Home = () => {
       </FormControl>
     </ModalBody>
     <ModalFooter>
-      <Button colorScheme="blue" mr={3} onClick={submitUpdate}>
+      <Button colorScheme="blue" mr={3} onClick={submitUpdate} className="linear">
         Save
       </Button>
       <Button onClick={() => setIsEditOpen(false)}>Cancel</Button>
@@ -576,16 +576,16 @@ const Home = () => {
       <Modal isOpen={isDeleteOpen} onClose={() => setIsDeleteOpen(false)}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Delete Note</ModalHeader>
+          <ModalHeader>Delete Product</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             Are you sure you want to delete this note?
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="red" mr={3} onClick={handleNoteDelete}>
+            <Button colorScheme="red" mr={3} onClick={handleNoteDelete} >
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteOpen(false)}>Cancel</Button>
+            <Button onClick={() => setIsDeleteOpen(false)} className="linear">Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

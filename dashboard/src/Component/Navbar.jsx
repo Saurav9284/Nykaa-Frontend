@@ -120,7 +120,7 @@ const Navbar = () => {
         ) : (
           <>
             <MenuItem name="login" className="menuitem" position="right">
-              <Button onClick={() => navigate("/login")}>Login</Button>
+              <Button onClick={() => navigate("/login")} className="linear">Login</Button>
             </MenuItem>
           </>
         )}

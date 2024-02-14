@@ -1,4 +1,5 @@
 {
+  "Homepage":".",
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +16,7 @@
     "firebase": "^10.7.2",
     "framer-motion": "^10.18.0",
     "lodash": "^4.17.21",
+    "netlify": "^13.1.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
