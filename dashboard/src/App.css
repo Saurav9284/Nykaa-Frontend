@@ -4,23 +4,27 @@
 }
 
 .linear{
-  background: linear-gradient(to right, #4bddf7, rgb(27, 63, 126))!important;
+  background: linear-gradient(to right, #4bddf7, rgb(27, 63, 126));
   -webkit-background-clip: text;
   background-clip: text;
   color: white!important;
 }
+
 .formheader{
-  color: #22c3df;
+  color: #22c3df!important;
 }
-.fromback{
-  background-color: rgb(255, 255, 255);
+
+.fromback {
+  background-color: rgb(255, 255, 255); /* Adjust background color as needed */
 }
+
 .logoDiv > h1 > span {
   background: linear-gradient(to right, #4b93f7, #1d1b7e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
 .logoDiv > h1  {
   color: rgb(77, 181, 188);
 }

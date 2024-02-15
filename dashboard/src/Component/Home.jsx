@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Card, Table } from "semantic-ui-react"; // Imported Table component
+import { Card, Table } from "semantic-ui-react"; 
 import {
   Menu,
   MenuItem,
@@ -111,7 +111,7 @@ const Home = () => {
         if (res.message === 'Product added successfully') {
           toast({
             position: "top",
-            title: res.msg,
+            title: res.message,
             status: "success",
             duration: 5000,
             isClosable: true,

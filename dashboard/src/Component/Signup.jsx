@@ -195,3 +195,106 @@ const Signup = () => {
 };
 
 export default Signup;
+
+
+// import {useToast} from '@chakra-ui/react'
+// import React, { useState } from 'react'
+// import { useNavigate } from 'react-router-dom'
+// import { Button, Form, Grid, Header,Message, Segment } from 'semantic-ui-react'
+
+// const Signup = () => {
+
+
+//   const [name,setName] = useState("");
+//   const [email,setEmail] = useState("");
+//   const [password,setPassword] = useState('');
+
+//   const navigate = useNavigate();
+//   const toast = useToast();
+
+//   const handleSubmit = (e) => {
+//         e.preventDefault(); 
+//         const payload = JSON.stringify({ name,email, password });
+//         fetch("https://nykamock-backend-production.up.railway.app/api/register", {
+//           method: "POST",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//           body: payload,
+//         })
+//           .then((res) => {
+//             if (!res.ok) {
+//               throw new Error("Network response was not ok");
+//             }
+//             return res.json();
+//           })
+//           .then((res) => {
+//             if (res.msg === "User Created!!") {
+//               toast({
+//                 position: "top",
+//                 title: res.msg,
+//                 status: "success",
+//                 duration: 5000,
+//                 isClosable: true,
+//               });
+//               navigate("/login");
+//             } else {
+//               toast({
+//                 position: "top",
+//                 title: res.msg || "Signup failed",
+//                 status: "error",
+//                 duration: 5000,
+//                 isClosable: true,
+//               });
+//             }
+//           })
+//           .catch((err) => {
+//             console.error("Error during signup:", err);
+//             toast({
+//               position: "top",
+//               title: "An error occurred during Signup",
+//               status: "error",
+//               duration: 5000,
+//               isClosable: true,
+//             });
+//           });
+//       };
+    
+    
+//       const login = () => {
+//         navigate('/login')
+//       }
+
+//     return (
+//       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle' className='signupmain'>
+//       <Grid.Column style={{ maxWidth: 450 }}>
+//         <Header as='h1' textAlign='center' className='formheader'>
+//           Create your account
+//         </Header>
+//         <Form size='large' onSubmit={handleSubmit}>
+//           <Segment stacked>
+//             <Form.Input fluid icon='user' iconPosition='left' placeholder='Enter your name..' value={name} onChange={(e) => { setName(e.target.value) }} />
+//             <Form.Input fluid icon='at' iconPosition='left' placeholder='E-mail address' value={email} onChange={(e) => { setEmail(e.target.value) }} />
+//             <Form.Input
+//               fluid
+//               icon='lock'
+//               iconPosition='left'
+//               placeholder='Password'
+//               type='password'
+//               value={password}
+//               onChange={(e) => { setPassword(e.target.value) }}
+//             />
+//             <Button fluid size='large' className='linear' type='submit'>
+//               Signup
+//             </Button>
+//           </Segment>
+//         </Form>
+//         <Message>
+//           Already have an account? <a onClick={login}>Login</a>
+//         </Message>
+//       </Grid.Column>
+//     </Grid>
+//     )
+// }
+
+// export default Signup
