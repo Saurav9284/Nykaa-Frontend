@@ -4,7 +4,7 @@
 }
 
 .linear{
-  background: linear-gradient(to right, #4bddf7, rgb(27, 63, 126));
+  background: linear-gradient(to right, #4bddf7, rgb(27, 63, 126))!important;
   -webkit-background-clip: text;
   background-clip: text;
   color: white!important;
@@ -15,7 +15,7 @@
 }
 
 .fromback {
-  background-color: rgb(255, 255, 255); /* Adjust background color as needed */
+  background-color: rgb(255, 255, 255); 
 }
 
 .logoDiv > h1 > span {

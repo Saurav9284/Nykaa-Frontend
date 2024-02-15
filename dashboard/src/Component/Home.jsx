@@ -444,7 +444,7 @@ const Home = () => {
                   </FormControl>
                 </ModalBody>
                 <ModalFooter>
-                  <Button mr={3} onClick={submitAdd}>
+                  <Button mr={3} onClick={submitAdd} className="linear">
                     Create
                   </Button>
                   <Button
@@ -582,10 +582,10 @@ const Home = () => {
             Are you sure you want to delete this note?
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="red" mr={3} onClick={handleNoteDelete} >
+            <Button colorScheme="red" mr={3} onClick={handleNoteDelete} className="linear">
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteOpen(false)} className="linear">Cancel</Button>
+            <Button onClick={() => setIsDeleteOpen(false)} >Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
