@@ -445,13 +445,12 @@ const Home = () => {
                   </FormControl>
                 </ModalBody>
                 <ModalFooter>
-                  <Button mr={3} onClick={submitAdd} className="linear">
+                  <Button mr={3} onClick={submitAdd} color="green">
                     Create
                   </Button>
                   <Button
                     color="red"
                     onClick={() => setIsCreateOpen(false)}
-                    basic
                   >
                     Cancel
                   </Button>
@@ -484,14 +483,14 @@ const Home = () => {
               <Table.Cell>{note.price}</Table.Cell>
               <Table.Cell>
                 <Button
-                  basic
+                  
                   color="green"
                   onClick={() => handleNoteClick(note)}
                 >
                   Edit
                 </Button>
                 <Button
-                  basic
+                  
                   color="red"
                   onClick={() => {
                     setSelectedNote(note);
@@ -565,10 +564,10 @@ const Home = () => {
       </FormControl>
     </ModalBody>
     <ModalFooter>
-      <Button colorScheme="blue" mr={3} onClick={submitUpdate} className="linear">
+      <Button color="green" mr={3} onClick={submitUpdate} >
         Save
       </Button>
-      <Button onClick={() => setIsEditOpen(false)}>Cancel</Button>
+      <Button onClick={() => setIsEditOpen(false)} color="red">Cancel</Button>
     </ModalFooter>
   </ModalContent>
 </Modal>
@@ -583,10 +582,10 @@ const Home = () => {
             Are you sure you want to delete this note?
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="red" mr={3} onClick={handleNoteDelete} className="linear">
+            <Button color="red" mr={3} onClick={handleNoteDelete}>
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteOpen(false)} >Cancel</Button>
+            <Button onClick={() => setIsDeleteOpen(false)} color="blue">Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
