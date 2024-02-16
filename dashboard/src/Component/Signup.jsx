@@ -62,7 +62,7 @@ const Signup = () => {
         return res.json();
       })
       .then((res) => {
-        if (res.msg === "User Created!!") {
+        if (res.msg === 'User Created!!') {
           toast({
             position: "top",
             title: res.msg,

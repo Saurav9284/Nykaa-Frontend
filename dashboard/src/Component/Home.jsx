@@ -304,6 +304,7 @@ const Home = () => {
         setIsEditOpen(false);
       });
   };
+  
 
   const sortOptions = [
     { key: "", value: "", text: "Select" },
@@ -382,8 +383,8 @@ const Home = () => {
         </MenuItem>
         <MenuItem>
           <>
-            <Button basic color="blue" onClick={() => setIsCreateOpen(true)}>
-              Add
+            <Button onClick={() => setIsCreateOpen(true)} className="linear">
+              Add Product
             </Button>
 
             <Modal isOpen={isOpen} onClose={() => setIsCreateOpen(false)}>
